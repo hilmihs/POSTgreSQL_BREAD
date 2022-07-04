@@ -183,7 +183,6 @@ router.get('/', function (req, res, next) {
   } else 
 if (req.url == '/') sql = 'SELECT * FROM data ORDER BY ID ASC'
   sql = sql + ` LIMIT 3 OFFSET ${offset}`
-  console.log(sql)
   db.query(sql, (err, result, next) => {
     data = result;
     if (err) {
